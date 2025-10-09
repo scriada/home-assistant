@@ -1,0 +1,166 @@
+- id: '1704929213204'
+  alias: heating-front-lounge on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - schedule.heating_front_lounge
+    to: 'on'
+  condition: []
+  action:
+  - service: climate.set_temperature
+    data:
+      temperature: 17
+    target:
+      device_id:
+      - 532c851984d9753ecada4783d4d7585c
+  mode: single
+- id: '1704930195929'
+  alias: heating-front-lounge off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - schedule.heating_front_lounge
+    to: 'off'
+  condition: []
+  action:
+  - service: climate.set_temperature
+    data:
+      temperature: 14
+    target:
+      device_id:
+      - 532c851984d9753ecada4783d4d7585c
+  mode: single
+- id: '1704930348741'
+  alias: heating-living-room on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - schedule.heating_living_room
+    to: 'on'
+  condition: []
+  action:
+  - service: climate.set_temperature
+    data:
+      temperature: 21
+    target:
+      device_id: d7b548680cea8b6005e9436a3211ed3c
+  mode: single
+- id: '1704930295869'
+  alias: heating-living-room off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - schedule.heating_living_room
+    to: 'off'
+  condition: []
+  action:
+  - service: climate.set_temperature
+    data:
+      temperature: 14
+    target:
+      device_id: d7b548680cea8b6005e9436a3211ed3c
+  mode: single
+- id: '1705088240451'
+  alias: heating-playroom on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - schedule.heating_play_room
+    to: 'on'
+  condition: []
+  action:
+  - service: climate.set_temperature
+    data:
+      temperature: 20
+    target:
+      device_id: a78089ab3bb26abc0d7d5ed8dda5689f
+  mode: single
+- id: '1705088330102'
+  alias: heating-playroom off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - schedule.heating_play_room
+    to: 'off'
+  condition: []
+  action:
+  - service: climate.set_temperature
+    data:
+      temperature: 10
+    target:
+      device_id: a78089ab3bb26abc0d7d5ed8dda5689f
+  mode: single
+- id: '1712263044340'
+  alias: Heating study off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - schedule.heating_study
+    to: 'off'
+  condition: []
+  action:
+  - service: climate.set_temperature
+    data:
+      temperature: 14
+    target:
+      entity_id: climate.sonoff_trvzb_thermostat
+  mode: single
+- id: '1712263298870'
+  alias: Heating study on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - schedule.heating_study
+    to: 'on'
+  condition:
+    or:
+    - and:
+      - condition: time
+        weekday:
+        - mon
+      - condition: state
+        entity_id: input_boolean.wfh_monday
+        state: 'on'
+    - and:
+      - condition: time
+        weekday:
+        - tue
+      - condition: state
+        entity_id: input_boolean.wfh_tuesday
+        state: 'on'
+    - and:
+      - condition: time
+        weekday:
+        - wed
+      - condition: state
+        entity_id: input_boolean.wfh_wednesday
+        state: 'on'
+    - and:
+      - condition: time
+        weekday:
+        - thu
+      - condition: state
+        entity_id: input_boolean.wfh_thursday
+        state: 'on'
+    - and:
+      - condition: time
+        weekday:
+        - fri
+      - condition: state
+        entity_id: input_boolean.wfh_friday
+        state: 'on'
+  action:
+  - service: climate.set_temperature
+    data:
+      temperature: 17
+    target:
+      entity_id: climate.sonoff_trvzb_thermostat
+  mode: single

@@ -1,0 +1,77 @@
+heating_front_lounge:
+  name: "Heating front lounge"
+  monday:
+    - from: "06:00:00"
+      to: "17:00:00"
+  tuesday:
+    - from: "06:00:00"
+      to: "17:00:00"
+  wednesday:
+    - from: "06:00:00"
+      to: "17:00:00"
+  thursday:
+    - from: "06:00:00"
+      to: "17:00:00"
+  friday:
+    - from: "06:00:00"
+      to: "17:00:00"
+  saturday:
+    - from: "06:00:00"
+      to: "17:00:00"
+  sunday:
+    - from: "06:00:00"
+      to: "17:00:00"
+
+heating_living_room:
+  name: "Heating living room"
+  monday:
+    - from: "06:00:00"
+      to: "22:00:00"
+  tuesday:
+    - from: "06:00:00"
+      to: "22:00:00"
+  wednesday:
+    - from: "06:00:00"
+      to: "22:00:00"
+  thursday:
+    - from: "06:00:00"
+      to: "22:00:00"
+  friday:
+    - from: "06:00:00"
+      to: "22:00:00"
+  saturday:
+    - from: "06:00:00"
+      to: "22:00:00"
+  sunday:
+    - from: "06:00:00"
+      to: "22:00:00"
+
+heating_playroom:
+  name: "Heating play room"
+  monday:
+    - from: "06:00:00"
+      to: "08:00:00"
+    - from: "17:00:00"
+      to: "19:00:00"
+  tuesday:
+    - from: "06:00:00"
+      to: "08:00:00"
+    - from: "17:00:00"
+      to: "19:00:00"
+  wednesday:
+    - from: "06:00:00"
+      to: "08:00:00"
+    - from: "17:00:00"
+      to: "19:00:00"
+  thursday:
+    - from: "16:30:00"
+      to: "19:00:00"
+  friday:
+    - from: "16:30:00"
+      to: "19:00:00"
+  saturday:
+    - from: "06:00:00"
+      to: "19:00:00"
+  sunday:
+    - from: "06:00:00"
+      to: "19:00:00"

@@ -1,0 +1,28 @@
+evening_study:
+  alias: "Evening study"
+  description: "Set the scene for evening study"
+  sequence:
+    - alias: "Dim the lights"
+      action: light.turn_off
+      target:
+        device_id: 45546f5a308dc511cbffacf905b5c4d0
+      data:
+        transition: 0
+    - alias: "Set lightstrip scene"
+      action: input_select.select_option
+      target:
+        entity_id: input_select.philips_hue_scene
+      data:
+        option: "palm_beach"
+    - alias: "Turn on heater"
+      type: turn_on
+      device_id: 61d26848dd0c09ff4cc344426272bf66
+      entity_id: 9587f0e0c6dd450c9234ff179f7cf832
+      domain: switch
+    - alias: "Turn on lightstrip"
+      action: light.turn_on
+      data:
+        transition: 5
+        brightness_pct: 50
+      target:
+        device_id: e4bac86d09e80a3ef28026ec8fd0c56d

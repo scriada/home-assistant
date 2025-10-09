@@ -1,0 +1,26 @@
+---
+version: '2.1'
+services:
+  homeassistant:
+    build: .
+    container_name: homeassistant
+    network_mode: host
+    environment:
+      - PUID=1001
+      - PGID=1001
+      - TZ=Europe/London
+    devices:
+      # zigbee dongle
+      - /dev/serial/by-id/usb-ITEAD_SONOFF_Zigbee_3.0_USB_Dongle_Plus_V2_20230509110129-if00:/dev/ttyZBE
+      - /dev/ttyACM0:/dev/ttyACM0
+    volumes:
+      - /home/adam/home_assistant/data:/config
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 600M
+        reservations:
+          cpus: '0.25'
+          memory: 300M

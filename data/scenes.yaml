@@ -1,0 +1,116 @@
+- id: '1741346513558'
+  name: Start work day
+  entities:
+    light.study_lights_light:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 148
+      off_with_transition: false
+      off_brightness:
+      friendly_name: study lights Light
+      supported_features: 40
+      state: 'on'
+    climate.sonoff_trvzb_thermostat:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 4
+      max_temp: 35
+      current_temperature: 14.2
+      temperature: 17
+      hvac_action: heating
+      system_mode: '[<SystemMode.Heat: 4>]/heat'
+      occupancy: 1
+      occupied_heating_setpoint: 1700
+      friendly_name: radiator-study Thermostat
+      supported_features: 1
+      state: heat
+    switch.sonoff_trvzb_switch:
+      friendly_name: radiator-study Switch
+      state: 'on'
+  metadata: {}
+  icon: mdi:coffee
+- id: '1741454866678'
+  name: End work day
+  entities:
+    light.study_lights_light:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      off_with_transition: false
+      off_brightness: 206
+      friendly_name: study lights Light
+      supported_features: 40
+      state: 'off'
+    climate.sonoff_trvzb_thermostat:
+      hvac_modes:
+      - 'off'
+      - heat
+      min_temp: 4
+      max_temp: 35
+      current_temperature: 19.8
+      temperature: 14
+      hvac_action: idle
+      occupancy: 1
+      occupied_heating_setpoint: 1400
+      system_mode: '[<SystemMode.Heat: 4>]/heat'
+      friendly_name: radiator-study Thermostat
+      supported_features: 385
+      state: heat
+    switch.sonoff_trvzb_switch:
+      friendly_name: radiator-study Switch
+      state: 'on'
+    switch.study_heater_switch:
+      friendly_name: Study heater Switch
+      state: 'off'
+    light.philips_hue_play_gradient_lightstrip:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - 'off'
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      off_with_transition: false
+      off_brightness: 121
+      friendly_name: Philips Hue Play gradient lightstrip
+      supported_features: 44
+      state: 'off'
+  metadata: {}
+  icon: mdi:briefcase
+- id: '1749124318295'
+  name: Morning coffee
+  entities:
+    media_player.sonos:
+      group_members:
+      - media_player.sonos
+      volume_level: 0.24
+      is_volume_muted: false
+      media_content_id: x-sonos-spotify:spotify/playlist/56nzcZrJ6u5o7Z2xEEJGs7
+      media_content_type: music
+      shuffle: true
+      repeat: 'off'
+      queue_size: 26
+      device_class: speaker
+      friendly_name: Sonos
+      supported_features: 4127295
+      queue_position: 1
+      media_position: 0
+      state: playing
+  icon: mdi:coffee
+  metadata:
+    media_player.sonos:
+      entity_only: true

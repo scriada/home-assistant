@@ -1,0 +1,57 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Enable My Home Assistant
+my:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 192.168.1.0/24   # allow proxy from local network
+
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+# Automations in YAML
+automation: !include_dir_merge_list automations/
+# Automations I create in the UI
+automation ui: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+template: !include templates.yaml
+# schedule: !include schedules.yaml
+
+# Inputs
+input_boolean: !include includes/input_boolean.yaml
+input_select: !include includes/input_select.yaml
+
+# Zigbee Home Automation (ZHA)
+zha:
+  enable_quirks: true
+  custom_quirks_path: /config/zha_quirks/
+
+# tracking
+device_tracker:
+  - platform: arris_tg2492lg
+    host: "192.168.0.1"
+    password: !secret router_passwd
+    new_device_defaults:
+      track_new_devices: false
+
+logger:
+  default: info
+
+# Lightwave setup
+# R<room-no>D<device-no>
+lightwave:
+  host: 192.168.0.46
+  switches:
+    R1D1:
+      name: Lamp
