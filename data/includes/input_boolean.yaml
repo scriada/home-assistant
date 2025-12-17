@@ -8,3 +8,5 @@ wfh_thursday:
   name: Thursday
 wfh_friday:
   name: Friday
+on_holiday:
+  name: On Holiday

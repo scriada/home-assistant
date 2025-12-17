@@ -1,0 +1,34 @@
+- id: '1763050030431'
+  alias: Notify low battery
+  description: ''
+  triggers:
+  - trigger: time_pattern
+    hours: '*'
+    minutes: '0'
+    seconds: '0'
+  conditions:
+  - condition: or
+    conditions:
+    - condition: numeric_state
+      entity_id: sensor.radiator_bedroom_3_battery
+      below: 50
+    - condition: numeric_state
+      entity_id: sensor.radiator_front_lounge_battery
+      below: 50
+    - condition: numeric_state
+      entity_id: sensor.sonoff_trvzb_battery
+      below: 49.9
+    - condition: numeric_state
+      entity_id: sensor.radiator_playroom_battery
+      below: 50
+    - condition: numeric_state
+      entity_id: sensor.radiator_living_room_battery
+      below: 50
+  actions:
+  - action: persistent_notification.create
+    metadata: {}
+    data:
+      message: Thermostat battery is below 50%
+      notification_id: '123'
+      title: Low battery
+  mode: single

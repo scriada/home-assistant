@@ -62,9 +62,6 @@
     switch.sonoff_trvzb_switch:
       friendly_name: radiator-study Switch
       state: 'on'
-    switch.study_heater_switch:
-      friendly_name: Study heater Switch
-      state: 'off'
     light.philips_hue_play_gradient_lightstrip:
       min_color_temp_kelvin: 2000
       max_color_temp_kelvin: 6535
