@@ -10,7 +10,7 @@
   action:
   - service: climate.set_temperature
     data:
-      temperature: 17
+      temperature: 19
     target:
       device_id:
       - 532c851984d9753ecada4783d4d7585c
