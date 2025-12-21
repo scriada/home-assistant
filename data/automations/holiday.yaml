@@ -1,0 +1,31 @@
+- id: '1762463045842'
+  alias: 'Holiday mode: simulate presence'
+  description: ''
+  triggers:
+  - trigger: time_pattern
+    hours: '*'
+  conditions:
+  - condition: state
+    entity_id: input_boolean.on_holiday
+    state: 'on'
+  - condition: sun
+    after: sunset
+    after_offset: -00:30:00
+  - condition: time
+    before: '22:00:00'
+  actions:
+  - delay:
+      hours: 0
+      minutes: "{{ '{:02}'.format(range(0,30) | random | int) }}"
+      seconds: 0
+  - action: light.toggle
+    metadata: {}
+    data: {}
+    target:
+      device_id: 27cb5d83a0146f14e457d14d073155a4
+  - action: light.toggle
+    metadata: {}
+    data: {}
+    target:
+      device_id: 45546f5a308dc511cbffacf905b5c4d0
+  mode: single
