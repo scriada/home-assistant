@@ -1,5 +1,5 @@
 - id: '1762463045842'
-  alias: 'Holiday mode: simulate presence'
+  alias: 'Holiday mode: simulate evening presence'
   description: ''
   triggers:
   - trigger: time_pattern
