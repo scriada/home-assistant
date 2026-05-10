@@ -9,12 +9,12 @@
     entity_id: input_boolean.on_holiday
     state: 'on'
   actions:
-  - action: light.off
+  - action: light.turn_off
     metadata: {}
     data: {}
     target:
       device_id: 27cb5d83a0146f14e457d14d073155a4
-  - action: light.off
+  - action: light.turn_off
     metadata: {}
     data: {}
     target:
